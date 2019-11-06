@@ -28,7 +28,8 @@ public class TestClass {
 //				"C:/Users/gulfa/OneDrive/Desktop/STS4 1.1/SpringExcelUpload/personData.xlsx");
 		InputStream stream = new FileInputStream(file2.getPath());
 		System.out.println("stream :	" + stream);
-		File file = new File("C:/Users/gulfa/OneDrive/Desktop/STS4 1.1/SpringExcelUpload/personConfig.xml");
+		File file = new File("C:\\Users\\gulfa\\Desktop\\STS Project\\SpringJavaFileRead\\personConfig.xml");
+//		File file = new File("C:/Users/gulfa/OneDrive/Desktop/STS4 1.1/SpringExcelUpload/personConfig.xml");
 		System.out.println("file" + file.getAbsolutePath());
 
 		List<Person> persons = TestClass.parseExcelFileToBeans(stream, file);
