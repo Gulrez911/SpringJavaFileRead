@@ -15,29 +15,30 @@ import org.springframework.core.io.Resource;
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.util.ResourceUtils;
 
-public class TestClass {
+public class TestClass2 {
 	@Autowired
 	ResourceLoader resourceLoader;
 
 	public static void main(String[] args) throws Exception {
 
 //		Excelh
-		File file2 = ResourceUtils.getFile("classpath:personData.xlsx");
+		File file2 = ResourceUtils.getFile("C:/Users/gulfa/OneDrive/Desktop/LMS.xlsx");
 //		String streamPath = ;
 //		InputStream stream = new FileInputStream(
 //				"C:/Users/gulfa/OneDrive/Desktop/STS4 1.1/SpringExcelUpload/personData.xlsx");
 		InputStream stream = new FileInputStream(file2.getPath());
 		System.out.println("stream :	" + stream);
-		File file = new File("E:/STS 4/SpringJavaFileRead/personConfig.xml");
+//		File file = new File("E:/STS 4/SpringJavaFileRead/personConfig.xml");
+		File file = new File("C:/Users/gulfa/OneDrive/Desktop/course.xml");
 		System.out.println("file" + file.getAbsolutePath());
 
-		List<Person> persons = TestClass.parseExcelFileToBeans(stream, file);
+		List<CourseDto> persons = TestClass2.parseExcelFileToBeans(stream, file);
 		System.out.println("Person List: " + persons);
 
-		for (Person person : persons) {
-			System.out.println("First Name: " + person.getFirstName());
-			System.out.println("Last Name: " + person.getLastName());
-			System.out.println("Age: " + person.getAge());
+		for (CourseDto person : persons) {
+			System.out.println("First Name: " + person.getCourse());
+			System.out.println("Last Name: " + person.getImageUrl());
+			System.out.println("Age: " + person.getLearningPath());
 		}
 	}
 
